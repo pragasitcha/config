@@ -11,6 +11,8 @@ docker build -f {{Dockerfile}} -t {{imagename}}:{{imagetag}} . (<< dot also a pa
 
 docker run -it -d -p 8080:8080 {{imagename}}:{{imagetag}} 
 
+docker stop {{container id}}
+
 docker rm {{container id}}
 
 docker rm -f {{container id}}
