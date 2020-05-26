@@ -7,6 +7,7 @@ docker ps -a
 docker image ls 
 
 docker build -f {{Dockerfile}} -t {{imagename}}:{{imagetag}} . (<< dot also a part of command.)
+
 {{imagename}}:{{imagetag}} ex. image:0.0.1
 
 docker run -it -d -p 8080:8080 {{imagename}}:{{imagetag}} 
