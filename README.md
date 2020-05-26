@@ -59,6 +59,10 @@ kubectl get pods -A
 
 kubectl get pods -n {{namespace}}
 
+kubectl create -f {{resourcefile}}
+
+kubectl delete -f {{resourcefile}}
+
 kubectl describe pods
 
 kubectl describe pods -n {{namespace}}
