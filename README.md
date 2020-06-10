@@ -76,3 +76,6 @@ kubectl exec -it {{podsname}} /bin/bash
 
 kubectl exec -it {{podsname}} /sh
 
+# permanently save the namespace for all subsequent kubectl commands in that context.
+kubectl config set-context --current --namespace=ggckad-s2
+
