@@ -79,3 +79,7 @@ kubectl exec -it {{podsname}} /sh
 # permanently save the namespace for all subsequent kubectl commands in that context.
 kubectl config set-context --current --namespace=ggckad-s2
 
+# Export Centos Systemlog as text.
+journalctl  --no-pager --since "2018-08-30 14:10:10"
+
+journalctl  --no-pager --since "2018-08-30" > exportlog.txt
