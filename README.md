@@ -76,6 +76,28 @@ kubectl exec -it {{podsname}} /bin/bash
 
 kubectl exec -it {{podsname}} /sh
 
+# Clean re install minikube 
+remove /etc/kubernetes/ 
+remove /var/lib/kubelet 
+remove /var/lib/minikube 
+remove /root/.kube
+remove /root/.minikube
+remove /usr/bin/minikube
+remove /usr/bin/kubectl
+
+remove docker image and container 
+
+#if cannot container hang and status = create . we need  manual delete.
+
+remove all docker volume 
+
+#if cannot container still hang and status = RemovalInProgress . we need  manual delete.
+change status of container /var/lib/docker/containers/[longcontainerid]/config.v2.json  change RemovalInProgress to false 
+
+systemctl daemon-reload && systemctl restart docker
+
+# try delete container -f again.
+
 # permanently save the namespace for all subsequent kubectl commands in that context.
 kubectl config set-context --current --namespace=ggckad-s2
 
