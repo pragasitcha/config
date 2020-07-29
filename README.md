@@ -104,7 +104,7 @@ change status of container /var/lib/docker/containers/[longcontainerid]/config.v
 
 systemctl daemon-reload && systemctl restart docker
 
-# try delete container -f again.
+try delete container -f again.
 
 # permanently save the namespace for all subsequent kubectl commands in that context.
 kubectl config set-context --current --namespace=ggckad-s2
@@ -113,3 +113,6 @@ kubectl config set-context --current --namespace=ggckad-s2
 journalctl  --no-pager --since "2018-08-30 14:10:10"
 
 journalctl  --no-pager --since "2018-08-30" > exportlog.txt
+
+# TAR gzip
+tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
