@@ -40,6 +40,8 @@ docker rmi -f $(docker image ls -a -q)
 
 docker rm -f $(docker ps -a -q)
 
+docker rm -f $(docker ps | grep openshift | awk '{print $1}') // remove every container contain named openshift
+
 ## Kube Note
 
 kubectl get pods
